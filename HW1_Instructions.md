@@ -165,9 +165,8 @@ Part 1 is worth 20 points:
 Part 2 is worth 40 points:
 
 * 10 points for your test cases and fixes
-* 10 points for the bug writeup
+* 20 points for the bug writeup
 * 10 points for Travis regression testing
-* 10 points for bug writeup
 
 Part 3 is worth 40 points:
 
@@ -193,7 +192,7 @@ The repository should contain:
   * At least one signed commit
 * Part 2
   * A directory named `part2` that contains `crash1.gft`, `crash2.gft`,
-    `hang.gft`, and `writeup.txt`
+    `hang.gft`, and `bugs.txt`
   * An updated .travis.yml that runs your tests
   * A commit with the fixed version of the code (if you like, this
     commit can also contain the files mentioned above)
