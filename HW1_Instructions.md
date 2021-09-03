@@ -206,8 +206,8 @@ The repository should contain:
     commit can also contain the files mentioned above)
 * Part 3
   * A directory named `fuzz` that contains `cov1.gft`, `cov2.gft`,
-    `fuzzer1.gft`, `fuzzer2.gft`, and `writeup.md` with a section named
-    "testing".
+    `fuzzer1.gft`, `fuzzer2.gft`.
+  * `writeup.md` with a section named "testing".
   * An updated GitHub Actions Workflow file that runs the new tests
   * A commit with the fixed version of the code (if you like, this
     commit can also contain the files mentioned above)
