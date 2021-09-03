@@ -36,6 +36,10 @@ After git is installed, you will want to configure your git user to sign
 your commits. This can be done by following the guide at
 https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work.
 
+In order for us to be able to verify that you successfully signed your commits,
+please upload an ASCII armored copy of your signing key in the root directory
+of your repository and name it signing\_key.pub.
+
 After installing and configuring git, you should then create a GitHub
 account at https://github.com, and add an ssh key using the guide found
 at https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account.
@@ -55,19 +59,18 @@ $ git clone git@github.com:<your_username>/<your_repository_name>.git
 
 Be sure to make the repository **private**.
 
-The next step is to set up Travis CI. To do this, go to
-https://travis-ci.org and authorize Travis to link with your GitHub
-account. After this, you should create a .travis.yml file in the root of
-your repository. For information on how to set up a .travis.yml file,
-you can read the Travis tutorial
-(https://docs.travis-ci.com/user/tutorial/) and the guide to using
-Travis with C and C++ (https://docs.travis-ci.com/user/languages/c/).
-Finally, you are required to set up Travis CI. This will take the form
-of creating a .travis.yml file which will contain the settings for
-Travis. More information about the .travis.yaml file for C projects can
-be found at https://docs.travis-ci.com/user/languages/c/. In Part 2 of
-this project you will be expanding the functionality of Travis by
-including tests.
+The next step is to set up GitHub Actions CI. To do this,you should create a
+.github/workflows directory in the root of your repository. After that, create a
+workflow.yaml file in that directory, and set it up to work with GitHub Actions. For
+information on how to set up GitHub Actions, you can read the GitHub Actions
+tutorial (https://docs.github.com/en/actions/quickstart).
+Finally, you are required to set up GitHub Actions. This will take the form
+of configurations in the workflow YAML file mentioned earlier in the .github/workflows
+directory. Information on how to configure GitHub Actions using this YAML file
+can be found on the GitHub Actions Introduction
+(https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions)
+In Part 2 of this project you will be expanding the functionality of GitHub
+Actions by including tests.
 
 
 ## Part 2: Auditing and Test Cases
@@ -95,8 +98,8 @@ the program. You should write:
 2. One test case, `hang.gft`, that causes the program to loop
    infinitely. (Hint: you may want to examine the "program" record type
    to find a bug that causes the program to loop infinitely.)
-3. A text file, `bugs.txt` explaining the bug triggered by each of your
-   three test cases. 
+3. A markdown file, `writeup.md` with a heading called "bugs" explaining the bug
+   triggered by each of your three test cases. 
 
 To create your own test files, you may want to look at
 `giftcardexamplewriter.c`. Although it is no better written than
@@ -104,9 +107,12 @@ To create your own test files, you may want to look at
 format and how to produce gift card files.
 
 Finally, fix the bugs that are triggered by your test cases, and verify
-that the program no longer crashes / hangs on your test cases. To make
-sure that these bugs don't come up again as the code evolves, have
-Travis automatically build and run the program on your test suite.
+that the program no longer crashes / hangs on your test cases. Above each bug
+that you fix, please put a comment that states what bug it fixes. For example,
+if you fix crash1 on line 22, on line 21 you should put "//crash1". **This is
+necessary to ensure that your code fixes are spotted by our autograder!** To
+make sure that these bugs don't come up again as the code evolves, have
+GitHub Actions automatically build and run the program on your test suite.
 
 ## Part 3: Fuzzing and Coverage
 
@@ -143,7 +149,7 @@ found by AFL. You should find that not all of the crashes found by AFL
 originally crash the program now---although AFL tries its best to figure
 out which crashes are caused by unique bugs, if often overcounts.
 
-Add the generated tests to your repository and have Travis run them.
+Add the generated tests to your repository and have GitHub Actions run them.
 Note that depending on how long you ran the fuzzer and how fast your
 machine is, there may be a lot of redundant test cases! To keep only the
 ones that exercise new behavior in your program, you can use the
@@ -151,7 +157,8 @@ ones that exercise new behavior in your program, you can use the
 
 To complete the assignment, commit your updated code, your handwritten
 tests, the fuzzer-generated tests, and a brief writeup explaining the
-bugs you found and fixed in this part.
+bugs you found and fixed in this part. This writeup should be in the writeup.md
+file under a header named "testing".
 
 ## Grading
 
@@ -160,13 +167,13 @@ Total points: 100
 Part 1 is worth 20 points:
 
 * 10 points for signed commits
-* 10 points for Travis configuration
+* 10 points for GitHub Actions configuration
 
 Part 2 is worth 40 points:
 
 * 10 points for your test cases and fixes
 * 10 points for the bug writeup
-* 10 points for Travis regression testing
+* 10 points for GitHub Actions regression testing
 * 10 points for bug writeup
 
 Part 3 is worth 40 points:
@@ -189,18 +196,20 @@ For this section, your TA is Julio Nunez, GitHub ID coming soon.
 The repository should contain:
 
 * Part 1
-  * Your .travis.yml
+  * Your GitHub Actions Workflow file
   * At least one signed commit
 * Part 2
-  * A directory named `part2` that contains `crash1.gft`, `crash2.gft`,
-    `hang.gft`, and `writeup.txt`
-  * An updated .travis.yml that runs your tests
+  * A directory named `tests` that contains `crash1.gft`, `crash2.gft`,
+    `hang.gft`.
+  * A markdown writeup called `writeup.md` with a heading named `bugs`
+  * An updated GitHub Actions Workflow file that runs your tests
   * A commit with the fixed version of the code (if you like, this
     commit can also contain the files mentioned above)
 * Part 3
-  * A directory named `part3` that contains `cov1.gft`, `cov2.gft`,
-    `fuzzer1.gft`, `fuzzer2.gft`, and `writeup.txt`
-  * An updated .travis.yml that runs the new tests
+  * A directory named `fuzz` that contains `cov1.gft`, `cov2.gft`,
+    `fuzzer1.gft`, `fuzzer2.gft`, and `writeup.md` with a section named
+    "testing".
+  * An updated GitHub Actions Workflow file that runs the new tests
   * A commit with the fixed version of the code (if you like, this
     commit can also contain the files mentioned above)
 
