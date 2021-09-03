@@ -172,9 +172,8 @@ Part 1 is worth 20 points:
 Part 2 is worth 40 points:
 
 * 10 points for your test cases and fixes
-* 10 points for the bug writeup
 * 10 points for GitHub Actions regression testing
-* 10 points for bug writeup
+* 20 points for the bug writeup
 
 Part 3 is worth 40 points:
 
@@ -189,9 +188,9 @@ On NYU Classes, submit a link to your GitHub repository. The repository
 should be **private**, and you should add the instructor/TA's GitHub
 account as a contributor to give them access for grading.
 
-For this section, your instructor is: Kevin Gallagher, GitHub ID kcg295.
+For this section, your instructor is: Kevin Gallagher, GitHub ID `kcg295`.
 
-For this section, your TA is Julio Nunez, GitHub ID coming soon.
+For this section, your TA is Evan Richter, GitHub ID `evanrichter`.
 
 The repository should contain:
 
