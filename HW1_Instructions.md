@@ -189,7 +189,7 @@ should be **private**, and you should add the instructor/TA's GitHub
 account as a contributor to give them access for grading.
 
 For this section, your instructors are: Kevin Gallagher, GitHub ID `kcg295` and
-Dean Christakos, GitHub ID to be added.
+Dean Christakos, GitHub ID `Deanchristakos`.
 
 For this section, your TAs are Gaurav Chauhan, GitHub ID to be added, Sarthak
 Bohra, GitHub ID to be added, and more TAs to be added.
