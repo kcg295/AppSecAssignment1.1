@@ -188,11 +188,8 @@ On NYU Classes, submit a link to your GitHub repository. The repository
 should be **private**, and you should add the instructor/TA's GitHub
 account as a contributor to give them access for grading.
 
-For this section, your instructors are: Kevin Gallagher, GitHub ID `kcg295` and
-Dean Christakos, GitHub ID `Deanchristakos`.
-
-For this section, your TAs are Gaurav Chauhan, GitHub ID to be added, Sarthak
-Bohra, GitHub ID to be added, and more TAs to be added.
+Please see your course page to see who your grader is. Please only add your
+grader the day you turn your assignment in.
 
 The repository should contain:
 
