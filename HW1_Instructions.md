@@ -175,8 +175,8 @@ Part 1 is worth 20 points:
 
 Part 2 is worth 40 points:
 
-* 10 points for your test cases and fixes
-* 10 points for GitHub Actions regression testing
+* 12 points for your test cases and fixes
+* 08 points for GitHub Actions regression testing
 * 20 points for the bug writeup
 
 Part 3 is worth 40 points:
