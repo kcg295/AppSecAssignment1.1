@@ -103,7 +103,8 @@ the program. You should write:
 3. A markdown file, `writeup.md` with a heading called "bugs" explaining the bug
    triggered by each of your two test cases. This write-up must also explain how
    one can achieve a third crash that is giftcard agnostic, that is, that does not
-   require a specific gift card to perform. *Hint: check the main function.*
+   require a specific gift card to perform. *Hint: check the main function.* You must also
+   fix this bug.
 
 To create your own test files, you may want to look at
 `giftcardexamplewriter.c`. Although it is no better written than
