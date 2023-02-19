@@ -232,14 +232,12 @@ The repository should contain:
 * Part 2
   * A directory naed `tests` that contains `crash1.gft`, `crash2.gft`,
     `hang.gft`.
-  * A writeup explaining your work completed in Part 2 to Gradescope
   * An updated GitHub Actions Workflow file that runs your tests
   * A commit with the fixed version of the code, named `giftcardreader.c` (if you like, this
     commit can also contain the files mentioned above)
 * Part 3
   * A directory named `fuzz` that contains `cov1.gft`, `cov2.gft`,
     `fuzzer1.gft`, `fuzzer2.gft`.
-  * A writeup explaining your work completed in Part 3 to Gradescope
   * An updated GitHub Actions Workflow file that runs the new tests
   * A commit with the fixed version of the code, named `giftcardreader.c` (if you like, this
     commit can also contain the files mentioned above)
